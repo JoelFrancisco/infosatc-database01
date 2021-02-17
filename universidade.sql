@@ -70,3 +70,85 @@ CREATE TABLE matriculas (
     foreign key (codaluno) references alunos(codaluno),
     foreign key (coddisciplina) references disciplinas(coddisciplina)
 );
+
+-- SELECTS
+
+-- 1
+SELECT * FROM cursos;
+
+-- 2
+SELECT * FROM alunos;
+
+-- 3
+SELECT * FROM professores;
+
+-- 4
+SELECT nome, sala 
+FROM cursos;
+
+-- 5 
+SELECT nome, cidade
+FROM coordenadores;
+
+-- 6
+SELECT nome, telefone, cidade, estado
+FROM alunos;
+
+-- 7 
+SELECT * 
+FROM coordenadores
+WHERE nome = "Ana Maria";
+
+-- 8
+SELECT *
+FROM professores
+WHERE estado = "SC";
+
+-- 9
+SELECT *
+FROM alunos
+WHERE cidade = "Criciúma";
+
+-- 10
+SELECT *
+FROM cursos
+WHERE nome LIKE "e%";
+
+-- 11
+SELECT *
+FROM cursos
+WHERE descricao LIKE "%Administração%";
+
+-- 12
+SELECT *
+FROM professores
+WHERE nome LIKE "%Silva%";
+
+
+-- 1 
+SELECT professores.nome, cursos.nome
+FROM professores, cursos
+WHERE professores.
+
+-- 2
+SELECT alunos.nome, alunos.codturma 
+FROM alunos
+
+-- 3
+SELECT coordenadores.nome, cursos.nome
+FROM coordenadores, cursos
+WHERE coordenadores.codcoordenador = cursos.codcoordenador;
+
+-- 4
+SELECT professores.nome,professores.telefone , professores.nraulas
+FROM professores
+
+-- 5
+SELECT alunos.codaluno, alunos.nome, alunos.telefone, turma.codturma, turmas.ano
+FROM alunos, turmas
+WHERE alunos.codturma = turmas.codturma;
+
+-- 6 
+SELECT coordenadores.nome, coordenadores.cidade, coordenadores.telefone, cursos.codcurso, cursos.nome
+FROM coordenadores, cursos
+WHERE cursos.codcoordenador = coordenadores.codcoordenador;
