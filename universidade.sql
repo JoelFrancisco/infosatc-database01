@@ -135,12 +135,21 @@ AND disciplinas.codcurso = cursos.codcurso;
 SELECT alunos.nome, alunos.codturma 
 FROM alunos;
 
+-- 2(professor)
+SELECT alunos.nome, turmas.codturma
+FROM alunos, turmas
+WHERE alunos.codturma = turmas.codturma;
+
 -- 3
 SELECT coordenadores.nome, cursos.nome
 FROM coordenadores, cursos
 WHERE coordenadores.codcoordenador = cursos.codcoordenador;
 
 -- 4
+SELECT professores.nome, professores.telefone , professores.nraulas
+FROM professores;
+
+-- 4(professor)
 SELECT professores.nome, professores.telefone , professores.nraulas
 FROM professores;
 
