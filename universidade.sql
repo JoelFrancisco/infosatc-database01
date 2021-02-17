@@ -146,12 +146,9 @@ FROM coordenadores, cursos
 WHERE coordenadores.codcoordenador = cursos.codcoordenador;
 
 -- 4
-SELECT professores.nome, professores.telefone , professores.nraulas
-FROM professores;
-
--- 4(professor)
-SELECT professores.nome, professores.telefone , professores.nraulas
-FROM professores;
+SELECT professores.nome, professores.telefone, disciplinas.nome, disciplinas.nraulas
+FROM professores, disciplinas
+WHERE professores.coddisciplina = disciplinas.coddisciplina;
 
 -- 5
 SELECT alunos.codaluno, alunos.nome, alunos.telefone, turma.codturma, turmas.ano
