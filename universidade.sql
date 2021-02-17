@@ -97,7 +97,7 @@ FROM alunos;
 -- 7 
 SELECT * 
 FROM coordenadores
-WHERE nome = "Ana Maria";
+WHERE nome LIKE "%Ana Maria%";
 
 -- 8
 SELECT *
@@ -112,12 +112,12 @@ WHERE cidade = "Criciúma";
 -- 10
 SELECT *
 FROM cursos
-WHERE nome LIKE "e%";
+WHERE nome LIKE "E%";
 
 -- 11
 SELECT *
 FROM cursos
-WHERE descricao LIKE "%Administração%";
+WHERE nome LIKE "%Administração%";
 
 -- 12
 SELECT *
@@ -127,12 +127,13 @@ WHERE nome LIKE "%Silva%";
 
 -- 1 
 SELECT professores.nome, cursos.nome
-FROM professores, cursos
-WHERE professores.
+FROM professores, cursos, disciplinas
+WHERE professores.coddisciplina = disciplinas.coddisciplina 
+AND disciplinas.codcurso = cursos.codcurso;
 
 -- 2
 SELECT alunos.nome, alunos.codturma 
-FROM alunos
+FROM alunos;
 
 -- 3
 SELECT coordenadores.nome, cursos.nome
@@ -140,8 +141,8 @@ FROM coordenadores, cursos
 WHERE coordenadores.codcoordenador = cursos.codcoordenador;
 
 -- 4
-SELECT professores.nome,professores.telefone , professores.nraulas
-FROM professores
+SELECT professores.nome, professores.telefone , professores.nraulas
+FROM professores;
 
 -- 5
 SELECT alunos.codaluno, alunos.nome, alunos.telefone, turma.codturma, turmas.ano
