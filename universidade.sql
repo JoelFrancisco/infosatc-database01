@@ -1,5 +1,5 @@
-CREATE DATABASE universidade
-USE universidade
+CREATE DATABASE universidade;
+USE universidade;
 
 CREATE TABLE coordenadores (
     codcoordenador int(5) not null,
