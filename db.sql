@@ -11,9 +11,9 @@ create table atividade (
 
 create table instrutor (
   idinstrutor int(5) not null,
-  rg int(12) not null,
+  rg varchar(12) not null,
   nome varchar(50) not null,
-  datadatanascimento date not null,
+  datanascimento date not null,
   titulacao varchar(50) not null,
   primary key (idinstrutor)
 );
@@ -63,13 +63,13 @@ values (3, "zumba");
 
 -- inserts instrutor
 insert into instrutor (idinstrutor, rg, nome, datanascimento, titulacao)
-values (1, 12345679012, "Antonio Carlos", "1990-01-12", "professor musculacao");
+values (1, '112345679012', "Antonio Carlos", "1990-01-12", "professor musculacao");
 
 insert into instrutor (idinstrutor, rg, nome, datanascimento, titulacao)
-values (2, 52248679012, "Sandra Regina", "1983-10-02", "professor zumba");
+values (2, '522486790120', "Sandra Regina", "1983-10-02", "professor zumba");
 
 insert into instrutor (idinstrutor, rg, nome, datanascimento, titulacao)
-values (3, 912335669012, "Pedro de Oliveira", "1980-03-22", "professor yoga");
+values (3, '912335669182', "Pedro de Oliveira", "1980-03-22", "professor yoga");
 
 -- inserts turma
 insert into turma (idturma, horario, duracao, datainicio, datafim, idatividade, idinstrutor)
@@ -89,12 +89,16 @@ insert into aluno (idaluno, datamatricula, nome, endereco, telefone, datanascime
 values(2, "2020-11-15", "Adalberto", "Criciuma", 987654321,"1990-08-10", 1.73, 72, 2);
 
 insert into aluno (idaluno, datamatricula, nome, endereco, telefone, datanascimento, altura, peso, idturma)
-values(3, "2021-01-13", "Luiz", "Ararangua", 999999999, 1.82,"2000-02-10", 82, 3);
+values(3, "2021-01-13", "Luiz", "Ararangua", 999999999,"2000-02-10", 1.82, 82, 3);
 
 -- insert matricula
 insert into matricula (idaluno, idturma)
 values(1, 1);
+
+insert into matricula (idaluno, idturma)
 values(2, 2);
+
+insert into matricula (idaluno, idturma)
 values(3, 3);
 
 -- Selects
@@ -116,7 +120,7 @@ from atividade;
 -- d
 select nome, endereco, telefone
 from aluno
-where endereco like "Cricuma"
+where endereco like "Cricuma";
 
 -- e 
 select nome, datanascimento, peso, altura
@@ -190,23 +194,22 @@ and instrutor.nome like "Sandra Regina"
 and atividade.nome = "zumba";
 
 -- q
-select nome, peso, altura
-from aluno, atividade
+select aluno.nome, peso, altura
+from aluno, turma, atividade
 where turma.idatividade = atividade.idatividade
 and atividade.nome = "musculacao"
 and YEAR(curdate()-YEAR(datanascimento)) > 40;
 
-
 -- r
-select nome, datanascimento, peso, altura
-from aluno, atividade
+select aluno.nome, datanascimento, peso, altura
+from aluno, turma, atividade
 where turma.idatividade = atividade.idatividade
 and atividade.nome = "musculacao"
 and datamatricula like "2020%";
 
 -- s
-select nome, telefone, peso, altura
-from aluno, atividade, instrutor
+select aluno.nome, telefone, peso, altura
+from aluno, turma, atividade, instrutor
 where turma.idatividade = atividade.idatividade
 and turma.idinstrutor = instrutor.idinstrutor
 and atividade.nome = "musculacao"
