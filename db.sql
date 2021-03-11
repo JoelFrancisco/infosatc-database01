@@ -191,7 +191,7 @@ from turma, atividade, instrutor
 where turma.idatividade = atividade.idatividade
 and turma.idinstrutor = instrutor.idinstrutor
 and instrutor.nome like "Sandra Regina"
-and atividade.nome = "zumba";
+and atividade.nome = "musculacao";
 
 -- q
 select aluno.nome, peso, altura
