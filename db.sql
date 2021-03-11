@@ -151,7 +151,7 @@ where datainicio like "2020-11%";
 -- j
 select horario, datainicio, datafim
 from turma
-where datafim like "2021-5%";
+where datafim like "2021-05%";
 
 -- k 
 select idturma, horario, duracao
