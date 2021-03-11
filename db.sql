@@ -198,7 +198,7 @@ select aluno.nome, peso, altura
 from aluno, turma, atividade
 where turma.idatividade = atividade.idatividade
 and atividade.nome = "musculacao"
-and YEAR(curdate()-YEAR(datanascimento)) > 40;
+and YEAR(curdate())-YEAR(datanascimento) > 40;
 
 -- r
 select aluno.nome, datanascimento, peso, altura
