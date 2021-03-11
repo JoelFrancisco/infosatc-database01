@@ -111,7 +111,7 @@ where (YEAR(curdate())-YEAR(datanascimento)<40);
 -- b
 select nome, datanascimento
 from instrutor
-where titulacao = "profesor musculacao";
+where titulacao = "professor musculacao";
 
 -- c
 select idatividade, nome
