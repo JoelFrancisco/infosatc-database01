@@ -212,7 +212,5 @@ select aluno.nome, telefone, peso, altura
 from aluno, turma, atividade, instrutor
 where turma.idatividade = atividade.idatividade
 and turma.idinstrutor = instrutor.idinstrutor
-and atividade.nome = "musculacao"
+and atividade.nome = "zumba"
 and instrutor.nome like "Antonio Carlos";
-
-
