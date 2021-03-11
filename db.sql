@@ -63,10 +63,10 @@ values (3, "zumba");
 
 -- inserts instrutor
 insert into instrutor (idinstrutor, rg, nome, datanascimento, titulacao)
-values (1, '112345679012', "Antonio Carlos", "1990-01-12", "professor musculacao");
+values (1, '112345679012', "Antonio Carlos", "1990-01-12", "professor zumba");
 
 insert into instrutor (idinstrutor, rg, nome, datanascimento, titulacao)
-values (2, '522486790120', "Sandra Regina", "1983-10-02", "professor zumba");
+values (2, '522486790120', "Sandra Regina", "1983-10-02", "professor musculacao");
 
 insert into instrutor (idinstrutor, rg, nome, datanascimento, titulacao)
 values (3, '912335669182', "Pedro de Oliveira", "1980-03-22", "professor yoga");
