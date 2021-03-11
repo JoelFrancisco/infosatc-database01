@@ -120,7 +120,7 @@ from atividade;
 -- d
 select nome, endereco, telefone
 from aluno
-where endereco like "Cricuma";
+where endereco like "Criciuma";
 
 -- e 
 select nome, datanascimento, peso, altura
