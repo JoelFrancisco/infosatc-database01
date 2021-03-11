@@ -106,7 +106,7 @@ values(3, 3);
 -- a
 select idinstrutor, nome
 from instrutor
-where YEAR(curdate()-YEAR(datanascimento)) < 30;
+where (YEAR(curdate())-YEAR(datanascimento)<40);
 
 -- b
 select nome, datanascimento
